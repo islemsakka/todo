@@ -1,0 +1,41 @@
+
+function item(){
+
+    var inpt=document.querySelector('input').value;
+    if (inpt!==""){
+    var maDiv = document.createElement("div");
+    maDiv.setAttribute('id','output');
+    var monInput1 = document.createElement("button");
+    monInput1.innerHTML="complete";
+    //document.getElementById("myDIV")
+   document.body.append(maDiv);
+   monInput1.setAttribute('id','b1');
+ document.getElementById("output").appendChild(monInput1);
+  
+    var newInput = document.createElement("button");
+    newInput.innerHTML="delete";
+   newInput.setAttribute('id', 'b2');
+   
+   document.getElementById("output").appendChild(newInput);
+    var textnode = document.createElement("label");
+    textnode.setAttribute('id','style');
+    textnode.innerHTML= inpt ;
+document.getElementById("output").appendChild(textnode);
+document.getElementById("output").appendChild(document.createElement("br"));
+var tab2=document.getElementById("b2");
+//for (let i in tab2){
+    newInput.onclick=function dele(){
+    document.getElementById("output").remove();
+}
+//}
+//var tab1=document.getElementById("b1");
+//for (let i in tab1){
+    monInput1.onclick=function undo(){
+    document.getElementById("b1").innerHTML="undo";
+    document.getElementById("style").style.textDecorationLine="line-through";
+//}
+}
+}
+else alert("Enter new task");
+}
+
